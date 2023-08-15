@@ -145,9 +145,16 @@
                     "sourcePort": "16_out",
                     "targetNode": "17",
                     "targetPort": "17_in"
+                },
+                {
+                    "id": "port_0_to_port_18",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "18",
+                    "targetPort": "18_in"
                 }
             ],
-            "hash": "6de515e425b70ae309d55b236565908f3e4cbd3c",
+            "hash": "bfb27a75502bad264b720d8ab10f495f0f09a5fc",
             "nodes": {
                 "0": {
                     "data": {
@@ -178,8 +185,8 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 1900
+                    "x": 540,
+                    "y": 1920
                 },
                 "10": {
                     "data": {
@@ -730,6 +737,36 @@
                     "x": 1320,
                     "y": 1200
                 },
+                "18": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "playbook_Log_File_Hashes_1",
+                        "id": "18",
+                        "inputs": {
+                            "Hash": {
+                                "datapaths": [
+                                    "artifact:*.cef.fileHash"
+                                ],
+                                "deduplicate": false
+                            }
+                        },
+                        "playbookName": "Log File Hashes",
+                        "playbookRepo": 5,
+                        "playbookRepoName": "https://github.com/liaisb/soar.git",
+                        "playbookType": "data",
+                        "synchronous": false,
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "18",
+                    "type": "playbook",
+                    "warnings": {},
+                    "x": 340,
+                    "y": 540
+                },
                 "2": {
                     "data": {
                         "action": "geolocate ip",
@@ -933,11 +970,7 @@
                     "errors": {},
                     "id": "4",
                     "type": "utility",
-                    "warnings": {
-                        "context": [
-                            "Connect block to playbook flow."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 1480,
                     "y": 860
                 },
@@ -1182,7 +1215,7 @@
         "schema": "5.0.10",
         "version": "6.0.1.123902"
     },
-    "create_time": "2023-08-15T19:39:09.700169+00:00",
+    "create_time": "2023-08-15T19:57:41.865927+00:00",
     "draft_mode": false,
     "labels": [
         "*"
