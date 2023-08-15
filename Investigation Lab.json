@@ -7,21 +7,21 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_2_to_port_1",
-                    "sourceNode": "2",
-                    "sourcePort": "2_out",
-                    "targetNode": "1",
-                    "targetPort": "1_in"
-                },
-                {
                     "id": "port_0_to_port_2",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
                     "targetNode": "2",
                     "targetPort": "2_in"
+                },
+                {
+                    "id": "port_2_to_port_5",
+                    "sourceNode": "2",
+                    "sourcePort": "2_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
                 }
             ],
-            "hash": "085ddbead70c915eb2e4c0eb82828542e1eb85a9",
+            "hash": "325781a93a2ba4bac7a063db31fbec13b9ebfa0b",
             "nodes": {
                 "0": {
                     "data": {
@@ -37,7 +37,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.99999999999955
+                    "y": 419.99999999999943
                 },
                 "1": {
                     "data": {
@@ -53,7 +53,7 @@
                     "type": "end",
                     "warnings": {},
                     "x": 1000,
-                    "y": 760
+                    "y": 920
                 },
                 "2": {
                     "data": {
@@ -261,6 +261,42 @@
                     "warnings": {},
                     "x": 1260,
                     "y": 720
+                },
+                "5": {
+                    "data": {
+                        "action": "domain reputation",
+                        "actionType": "investigate",
+                        "advanced": {
+                            "customName": "Source Reputation",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "connector": "VirusTotal",
+                        "connectorConfigs": [
+                            "virustotal"
+                        ],
+                        "connectorId": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "source_reputation",
+                        "id": "5",
+                        "parameters": {
+                            "domain": "artifact:*.cef.sourceDnsDomain"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "domain"
+                            }
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 684.5
                 }
             },
             "notes": ""
@@ -272,7 +308,7 @@
         "schema": "5.0.10",
         "version": "6.0.1.123902"
     },
-    "create_time": "2023-08-14T20:04:47.059477+00:00",
+    "create_time": "2023-08-15T15:38:53.728495+00:00",
     "draft_mode": false,
     "labels": [
         "*"
