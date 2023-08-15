@@ -26,7 +26,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "70206cc1697a1ebdf121c3495c5c6df5bec0cbe6",
+            "hash": "f6c3785079cc1a254f8c5733595d182c3e771ef8",
             "nodes": {
                 "0": {
                     "data": {
@@ -71,7 +71,7 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "container:hash",
+                                        "param": "playbook_input:hash",
                                         "value": "custom_list:Prior Hashes"
                                     }
                                 ],
@@ -84,6 +84,7 @@
                             {
                                 "comparisons": [
                                     {
+                                        "conditionIndex": 1,
                                         "op": "==",
                                         "param": "",
                                         "value": ""
@@ -218,7 +219,7 @@
         "schema": "5.0.10",
         "version": "6.0.1.123902"
     },
-    "create_time": "2023-08-15T19:55:51.641375+00:00",
+    "create_time": "2023-08-15T20:04:22.917612+00:00",
     "draft_mode": false,
     "labels": [
         "*"

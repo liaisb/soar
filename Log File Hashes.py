@@ -21,13 +21,11 @@ def on_start(container):
 def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("decision_1() called")
 
-    hash_value = container.get("hash", None)
-
     # check for 'if' condition 1
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            [hash_value, "==", "custom_list:Prior Hashes"]
+            ["playbook_input:hash", "==", "custom_list:Prior Hashes"]
         ],
         delimiter=None)
 
