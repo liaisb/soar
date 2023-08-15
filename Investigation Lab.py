@@ -179,7 +179,7 @@ def check_positives(action=None, success=None, container=None, results=None, han
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["virus_search:action_result.summary.positives", ">", 10]
+            ["virus_search:action_result.summary.positives", ">", 100000]
         ],
         delimiter=None)
 
@@ -187,6 +187,9 @@ def check_positives(action=None, success=None, container=None, results=None, han
     if found_match_1:
         notify_soc_management(action=action, success=success, container=container, results=results, handle=handle)
         return
+
+    # check for 'else' condition 2
+    format_1(action=action, success=success, container=container, results=results, handle=handle)
 
     return
 
@@ -252,6 +255,77 @@ def evaluate_prompt(action=None, success=None, container=None, results=None, han
     # call connected blocks if condition 2 matched
     if found_match_2:
         return
+
+    return
+
+
+@phantom.playbook_block()
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("format_1() called")
+
+    template = """Virus positives {0} are below threshold 10, closing event.\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "virus_search:action_result.status"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+
+    add_comment_set_status(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def add_comment_set_status(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("add_comment_set_status() called")
+
+    format_1__as_list = phantom.get_format_data(name="format_1__as_list")
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.comment(container=container, comment=format_1__as_list)
+    phantom.set_status(container=container, status="closed")
+
+    container = phantom.get_container(container.get('id', None))
+
+    return
+
+
+@phantom.playbook_block()
+def pin_add_to_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("pin_add_to_comment() called")
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.comment(container=container)
 
     return
 
