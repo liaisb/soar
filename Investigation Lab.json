@@ -35,13 +35,6 @@
                     "targetPort": "7_in"
                 },
                 {
-                    "id": "port_5_to_port_7",
-                    "sourceNode": "5",
-                    "sourcePort": "5_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
-                },
-                {
                     "id": "port_6_to_port_7",
                     "sourceNode": "6",
                     "sourcePort": "6_out",
@@ -59,9 +52,16 @@
                     "sourcePort": "7_out",
                     "targetNode": "8",
                     "targetPort": "8_in"
+                },
+                {
+                    "id": "port_5_to_port_7",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
                 }
             ],
-            "hash": "9053e0fbe8bdc537de0f593dca5f0d66ad3e7239",
+            "hash": "085ddbead70c915eb2e4c0eb82828542e1eb85a9",
             "nodes": {
                 "0": {
                     "data": {
@@ -298,7 +298,11 @@
                     "errors": {},
                     "id": "4",
                     "type": "utility",
-                    "warnings": {},
+                    "warnings": {
+                        "context": [
+                            "Connect block to playbook flow."
+                        ]
+                    },
                     "x": 540,
                     "y": 960
                 },
@@ -422,7 +426,7 @@
                     "type": "decision",
                     "warnings": {},
                     "x": 1060,
-                    "y": 740
+                    "y": 760
                 },
                 "8": {
                     "data": {
@@ -455,14 +459,12 @@
                         ],
                         "type": "prompt"
                     },
-                    "errors": {
-                        "message": "Add message content."
-                    },
+                    "errors": {},
                     "id": "8",
                     "type": "prompt",
                     "warnings": {},
                     "x": 1060,
-                    "y": 900
+                    "y": 940
                 }
             },
             "notes": ""
