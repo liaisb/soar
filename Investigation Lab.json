@@ -28,28 +28,40 @@
                     "targetPort": "6_in"
                 },
                 {
-                    "id": "port_2_to_port_4",
+                    "id": "port_2_to_port_7",
                     "sourceNode": "2",
                     "sourcePort": "2_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
+                    "targetNode": "7",
+                    "targetPort": "7_in"
                 },
                 {
-                    "id": "port_5_to_port_4",
+                    "id": "port_5_to_port_7",
                     "sourceNode": "5",
                     "sourcePort": "5_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
+                    "targetNode": "7",
+                    "targetPort": "7_in"
                 },
                 {
-                    "id": "port_6_to_port_4",
+                    "id": "port_6_to_port_7",
                     "sourceNode": "6",
                     "sourcePort": "6_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
+                    "targetNode": "7",
+                    "targetPort": "7_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_7_to_port_8",
+                    "sourceNode": "7",
+                    "sourcePort": "7_out",
+                    "targetNode": "8",
+                    "targetPort": "8_in"
                 }
             ],
-            "hash": "27b93e43e98ee43f128e2390ab198595c09846f3",
+            "hash": "9053e0fbe8bdc537de0f593dca5f0d66ad3e7239",
             "nodes": {
                 "0": {
                     "data": {
@@ -287,8 +299,8 @@
                     "id": "4",
                     "type": "utility",
                     "warnings": {},
-                    "x": 980,
-                    "y": 780
+                    "x": 540,
+                    "y": 960
                 },
                 "5": {
                     "data": {
@@ -361,6 +373,96 @@
                     "warnings": {},
                     "x": 1300,
                     "y": 600
+                },
+                "7": {
+                    "data": {
+                        "advanced": {
+                            "customName": "Check Positives",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": ">",
+                                        "param": "virus_search:action_result.summary.positives",
+                                        "value": "10"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "High positives",
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "op": "==",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "customName": "Low Positives",
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "check_positives",
+                        "id": "7",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "7",
+                    "type": "decision",
+                    "warnings": {},
+                    "x": 1060,
+                    "y": 740
+                },
+                "8": {
+                    "data": {
+                        "advanced": {
+                            "customName": "Notify SOC Management",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "approver": {
+                            "type": "user",
+                            "value": "container_owner"
+                        },
+                        "functionId": 1,
+                        "functionName": "notify_soc_management",
+                        "id": "8",
+                        "message": "A potentially malicious file download has been detected on a local server with IP address {0}",
+                        "parameters": [
+                            "artifact:*.cef.destinationAddress"
+                        ],
+                        "responseTime": 30,
+                        "responses": [
+                            {
+                                "responseOptions": [
+                                    "Yes",
+                                    "No"
+                                ],
+                                "responsePrompt": "Notify SOC management?",
+                                "responseType": "yes/no"
+                            }
+                        ],
+                        "type": "prompt"
+                    },
+                    "errors": {
+                        "message": "Add message content."
+                    },
+                    "id": "8",
+                    "type": "prompt",
+                    "warnings": {},
+                    "x": 1060,
+                    "y": 900
                 }
             },
             "notes": ""
@@ -372,7 +474,7 @@
         "schema": "5.0.10",
         "version": "6.0.1.123902"
     },
-    "create_time": "2023-08-15T15:45:17.211810+00:00",
+    "create_time": "2023-08-15T15:53:56.445111+00:00",
     "draft_mode": false,
     "labels": [
         "*"
