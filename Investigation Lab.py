@@ -391,7 +391,7 @@ def promote_to_case(action=None, success=None, container=None, results=None, han
     ################################################################################
 
     # call playbook "https://github.com/liaisb/soar.git/Case Promotion Lab", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("https://github.com/liaisb/soar.git/Case Promotion Lab", container=container, inputs=inputs)
+    playbook_run_id = phantom.playbook("https://github.com/liaisb/soar.git/Case Promotion Lab", container=container, name="promote_to_case", inputs=inputs)
 
     return
 

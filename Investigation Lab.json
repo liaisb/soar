@@ -123,7 +123,7 @@
                     "targetPort": "15_in"
                 }
             ],
-            "hash": "5acf876f91af98d23219af7f7039a80d911c1c98",
+            "hash": "06b7d5c05246a6b1d8e24c4f1ff8e10b7580a91e",
             "nodes": {
                 "0": {
                     "data": {
@@ -551,7 +551,7 @@
                         "playbookRepo": 5,
                         "playbookRepoName": "https://github.com/liaisb/soar.git",
                         "playbookType": "data",
-                        "synchronous": false,
+                        "synchronous": true,
                         "type": "playbook"
                     },
                     "errors": {},
@@ -764,11 +764,7 @@
                     "errors": {},
                     "id": "4",
                     "type": "utility",
-                    "warnings": {
-                        "context": [
-                            "Connect block to playbook flow."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 1380,
                     "y": 1000
                 },
@@ -1013,7 +1009,7 @@
         "schema": "5.0.10",
         "version": "6.0.1.123902"
     },
-    "create_time": "2023-08-15T18:57:26.080128+00:00",
+    "create_time": "2023-08-15T19:01:27.512185+00:00",
     "draft_mode": false,
     "labels": [
         "*"
