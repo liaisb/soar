@@ -27,11 +27,11 @@ def compose_report(action=None, success=None, container=None, results=None, hand
     parameters = [
         "container:url",
         "container:name",
-        "a",
-        "",
-        "",
-        "",
-        ""
+        "container:description",
+        "artifact:*.cef.sourceDnsDomain",
+        "artifact:*.cef.deviceAddress",
+        "artifact:*.cef.filePath",
+        "playbook_input:promotion_reason"
     ]
 
     ################################################################################
