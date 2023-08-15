@@ -85,9 +85,45 @@
                     "sourcePort": "10_out",
                     "targetNode": "11",
                     "targetPort": "11_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_9_to_port_12",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "12",
+                    "targetPort": "12_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 2
+                        }
+                    ],
+                    "id": "port_9_to_port_13",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "13",
+                    "targetPort": "13_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 2
+                        }
+                    ],
+                    "id": "port_9_to_port_15",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "15",
+                    "targetPort": "15_in"
                 }
             ],
-            "hash": "5dffff6f03f3750f8473e04552614795f6a9a6f4",
+            "hash": "5acf876f91af98d23219af7f7039a80d911c1c98",
             "nodes": {
                 "0": {
                     "data": {
@@ -119,7 +155,7 @@
                     "type": "end",
                     "warnings": {},
                     "x": 1000,
-                    "y": 1360
+                    "y": 1720
                 },
                 "10": {
                     "data": {
@@ -223,7 +259,7 @@
                                     "author",
                                     "trace"
                                 ],
-                                "comment": "format_1:formatted_data.*"
+                                "comment": "format_1:formatted_data"
                             },
                             "set_status": {
                                 "_internal": [
@@ -284,6 +320,82 @@
                                 ],
                                 "label": "add comment",
                                 "name": "comment"
+                            },
+                            "pin": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "message",
+                                        "name": "message",
+                                        "placeholder": "Enter a message",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "description": "",
+                                        "label": "data",
+                                        "name": "data",
+                                        "placeholder": "Enter a value",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "choices": [
+                                            "card",
+                                            "data"
+                                        ],
+                                        "description": "",
+                                        "label": "pin type",
+                                        "name": "pin_type",
+                                        "placeholder": "Select pin type",
+                                        "renderType": "dropdown",
+                                        "required": false
+                                    },
+                                    {
+                                        "choices": [
+                                            "grey",
+                                            "blue",
+                                            "red"
+                                        ],
+                                        "description": "",
+                                        "label": "pin color",
+                                        "name": "pin_style",
+                                        "placeholder": "Select pin color",
+                                        "renderType": "dropdown",
+                                        "required": false
+                                    },
+                                    {
+                                        "description": "",
+                                        "label": "name",
+                                        "name": "name",
+                                        "placeholder": "Use a named pin",
+                                        "renderType": "input",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "truncate",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "pin",
+                                "name": "pin"
                             }
                         },
                         "utilityType": "api",
@@ -294,20 +406,160 @@
                                     "author",
                                     "trace"
                                 ],
-                                "comment": null
+                                "comment": "User failed to promote event within time limit"
+                            },
+                            "pin": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "truncate",
+                                    "trace"
+                                ],
+                                "data": null,
+                                "message": "Awaiting Action",
+                                "name": "Awaiting Action",
+                                "pin_style": "red",
+                                "pin_type": "card"
                             }
                         }
                     },
                     "errors": {},
                     "id": "12",
                     "type": "utility",
-                    "warnings": {
-                        "context": [
-                            "Connect block to playbook flow."
-                        ]
+                    "warnings": {},
+                    "x": 720,
+                    "y": 1340
+                },
+                "13": {
+                    "data": {
+                        "advanced": {
+                            "customName": "add comment set status",
+                            "customNameId": 1,
+                            "join": [],
+                            "refreshNotableData": true
+                        },
+                        "functionId": 4,
+                        "functionName": "add_comment_set_status_1",
+                        "id": "13",
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "comment": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "comment",
+                                        "name": "comment",
+                                        "placeholder": "Enter a comment",
+                                        "renderType": "datapath",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "add comment",
+                                "name": "comment"
+                            },
+                            "set_status": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "choices": "notableStatus",
+                                        "description": "",
+                                        "label": "status",
+                                        "name": "status",
+                                        "placeholder": "Select status",
+                                        "renderType": "dropdown",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "set status",
+                                "name": "set_status",
+                                "refreshNotableData": true
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "comment": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "trace"
+                                ],
+                                "comment": "notify_soc_management:action_result.summary.responses.1"
+                            },
+                            "set_status": {
+                                "_internal": [
+                                    "container",
+                                    "trace"
+                                ],
+                                "status": "closed"
+                            }
+                        }
                     },
-                    "x": 706.4285888671875,
-                    "y": 1256
+                    "errors": {},
+                    "id": "13",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 1240,
+                    "y": 1340
+                },
+                "15": {
+                    "data": {
+                        "advanced": {
+                            "customName": "Promote to Case",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "promote_to_case",
+                        "id": "15",
+                        "inputs": {
+                            "Promotion Reason": {
+                                "datapaths": [
+                                    "notify_soc_management:action_result.summary.responses.1"
+                                ],
+                                "deduplicate": false
+                            }
+                        },
+                        "playbookName": "Case Promotion Lab",
+                        "playbookRepo": 5,
+                        "playbookRepoName": "https://github.com/liaisb/soar.git",
+                        "playbookType": "data",
+                        "synchronous": false,
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "15",
+                    "type": "playbook",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 1480
                 },
                 "2": {
                     "data": {
@@ -606,7 +858,7 @@
                                         "conditionIndex": 0,
                                         "op": ">",
                                         "param": "virus_search:action_result.summary.positives",
-                                        "value": "100000"
+                                        "value": "10"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -670,6 +922,10 @@
                                 ],
                                 "responsePrompt": "Notify SOC management?",
                                 "responseType": "yes/no"
+                            },
+                            {
+                                "responsePrompt": "Reason for Decision",
+                                "responseType": "message"
                             }
                         ],
                         "type": "prompt"
@@ -679,7 +935,7 @@
                     "type": "prompt",
                     "warnings": {},
                     "x": 1060,
-                    "y": 940
+                    "y": 1000
                 },
                 "9": {
                     "data": {
@@ -745,7 +1001,7 @@
                     "type": "decision",
                     "warnings": {},
                     "x": 1060,
-                    "y": 1120
+                    "y": 1180
                 }
             },
             "notes": ""
@@ -757,7 +1013,7 @@
         "schema": "5.0.10",
         "version": "6.0.1.123902"
     },
-    "create_time": "2023-08-15T17:37:59.472874+00:00",
+    "create_time": "2023-08-15T18:57:26.080128+00:00",
     "draft_mode": false,
     "labels": [
         "*"
