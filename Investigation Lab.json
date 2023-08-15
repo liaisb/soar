@@ -154,7 +154,7 @@
                     "targetPort": "18_in"
                 }
             ],
-            "hash": "bfb27a75502bad264b720d8ab10f495f0f09a5fc",
+            "hash": "6de515e425b70ae309d55b236565908f3e4cbd3c",
             "nodes": {
                 "0": {
                     "data": {
@@ -459,7 +459,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 720,
-                    "y": 1640
+                    "y": 1560
                 },
                 "13": {
                     "data": {
@@ -558,7 +558,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 1240,
-                    "y": 1640
+                    "y": 1560
                 },
                 "15": {
                     "data": {
@@ -590,7 +590,7 @@
                     "type": "playbook",
                     "warnings": {},
                     "x": 980,
-                    "y": 1740
+                    "y": 1660
                 },
                 "16": {
                     "data": {
@@ -970,7 +970,11 @@
                     "errors": {},
                     "id": "4",
                     "type": "utility",
-                    "warnings": {},
+                    "warnings": {
+                        "context": [
+                            "Connect block to playbook flow."
+                        ]
+                    },
                     "x": 1480,
                     "y": 860
                 },
@@ -1137,7 +1141,7 @@
                     "type": "prompt",
                     "warnings": {},
                     "x": 1060,
-                    "y": 1300
+                    "y": 1220
                 },
                 "9": {
                     "data": {
@@ -1203,7 +1207,7 @@
                     "type": "decision",
                     "warnings": {},
                     "x": 1060,
-                    "y": 1460
+                    "y": 1380
                 }
             },
             "notes": ""
